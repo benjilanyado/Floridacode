@@ -1,0 +1,10 @@
+.tilebox, #buttons img, .videoholder, #explore, #tilehead4, .islandcopy, #whalepic, #galleryslide, #imageshell  {
+
+	background: black;
+}
+
+.tilebox a, .boxbyline, #tooltip, #tooltip::after, #more, .endlink {
+
+	color: #f58220;
+}
+
