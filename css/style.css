@@ -44,11 +44,23 @@
 	font-family: "g-normal"
 }
 
+#address {
+
+	padding-top: 20px;
+}
+
+#copyholder a {
+
+	color: #65c5fb;
+	text-decoration: none
+}
+
 #copyheader {
 
 	font-size: 40px;
 	margin: 20px 0px;
-	font-family: 'g-bold'
+	font-family: 'g-bold';
+	line-height: 1;
 }
 
 #copyholder img {
@@ -76,15 +88,6 @@
 	margin-top: 30px
 }
 
-#tile1 {
-
-	background: red
-}
-
-#tile2 {
-
-	background: pink
-}
 
 .clear {
 	clear: both;
