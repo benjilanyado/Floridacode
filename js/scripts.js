@@ -4,7 +4,7 @@ $(document).ready(function(){
 ///// TILES & UP/DOWN BUTTONS /////
 
 
-var verticalimages = [	"0px", "627px", "1254px", "1881px", "2508px"];
+var verticalimages = [	"0px", "627px", "1254px", "1881px", "2508px", "3135px"];
 
 var lightboxCurrent = 0;
 
@@ -18,8 +18,8 @@ function downclick() {
  	if (lightboxCurrent==(verticalimages.length - 1)) {
 
  		$("#downbutton").fadeOut()
- 		$("#upbutton").fadeIn()
- 		$("rightbutton").fadeIn()
+        setTimeout(function(){
+        $('#tooltip2').fadeOut() }, 5000);
 
  	}
 
@@ -35,9 +35,9 @@ function upclick() {
 
  	$("#downbutton").fadeIn()
 
- 	if (lightboxCurrent==(verticalimages.length - 5)) {  //NB  "-5" needs to be whatever length of array is
+ 	if (lightboxCurrent==(verticalimages.length - 6)) {  //NB  "-5" needs to be whatever length of array is
 
- 		$("#upbutton").fadeOut()
+ 		$("#upbutton").fadeOut();
  	}
 
 
@@ -72,25 +72,27 @@ function upclick() {
     $("#slider").animate({"left": "-940px"}, 1000, function(){
 
       $("#buttons").fadeIn()
-      $("#tooltip").fadeIn()
+      $("#tooltip1").fadeIn()
     })
 
   });
+
+
 
 
 var boxs = [
     {
         selector: '#cover3',
         headline: 'Bold Bean Cafe',
-        copy: "First stop of the day - <a target='_blank' href='http://www.boldbeancoffee.com/pages/cafe'>Bold Bean Cafe</a> (869 Stockton Street, Jacksonville). Thanks to <a target='_blank' href='https://twitter.com/pricesquire'>@pricesquire</a> for the tip. My Americano was very nice, as was the the breadline pie I had with it. It's quite a hip place.",
-        address: "• <a target='_blank' href='http://www.boldbeancoffee.com/pages/cafe'>boldbeancoffee.com</a>",
+        copy: "First stop of the day - <a target='_blank' href='http://www.boldbeancoffee.com/pages/cafe'>Bold Bean Cafe</a>. Thanks to <a target='_blank' href='https://twitter.com/pricesquire'>@pricesquire</a> for the tip. My Americano was very nice, as was the the breadline pie I had with it. It's quite a hip place.",
+        address: "• <a target='_blank' href='http://www.boldbeancoffee.com/pages/cafe'>boldbeancoffee.com</a>, 869 Stockton Street, Jacksonville<br/><br/>• Listen to <a target='blank' href='http://www.guardian.co.uk/travel/2013/apr/25/sweat-records-florida-road-trip-spotify-playlist'>Sweat Records' Florida road trip playlist</a>",
         content: '<img src="images/boldbean.jpg">'
     },
 
     {
         selector: '#cover2',
         headline: 'Airstream ranch',
-        copy: 'On the way west along the I-4, I pulled in at Airstream Ranch.  Eight trailers/caravans shoved in the ground, lengthways. Frank and Dorothy Bates erected them in 2007. In 2010,<a target="_blank" href="http://www.tampabay.com/news/localgovernment/airstream-ranch-along-i-4-does-not-violate-law-judges-rule/1072831%20"> after a legal battle</a>, a judge ruled they could keep them up.',
+        copy: 'On the way west along the I-4, I pulled in at Airstream Ranch.  Eight trailers/caravans shoved in the ground, lengthways. Frank and Dorothy Bates erected them in 2007. In 2010,<a target="_blank" href="http://www.tampabay.com/news/humaninterest/now-legit-as-art-airstream-ranch-will-honk-its-horn/1095257"> after a legal battle</a>, a judge ruled they could keep them up.',
         content: '<img src="images/airstreams.jpg">',
         address: ''
     },
@@ -98,7 +100,7 @@ var boxs = [
     {
         selector: '#cover1',
         headline: 'St Augustine',
-        copy: "St Augustine was recommended by <a target='_blank' href='https://twitter.com/pwells228/status/328888221004079105'>@pwells228</a> and <a target='_blank' href='https://twitter.com/karenzander/status/328625389264056321'>@karenzander</a> – who volunteered to give me a tour around the city. It’s the oldest continuously occupied European-established settlement in the US, with Spanish style architecture and a narrow, pedestrian only downtown.<br/>The Quarter re-opened in March, after $3m was spent on its creation. It's on St George street right in the center of St Augustine. Cindy Stavely gave me a whistle stop tour round the living museum, which has a blacksmith, old newspaper printing press, and a gunsmith.",
+        copy: "St Augustine was recommended by <a target='_blank' href='https://twitter.com/pwells228/status/328888221004079105'>@pwells228</a> and <a target='_blank' href='https://twitter.com/karenzander/status/328625389264056321'>@karenzander</a> – who volunteered to give me a tour around the city. It’s the oldest continuously occupied European-established settlement in the US, with Spanish-style architecture and a narrow, pedestrian only downtown.<br/>The Quarter reopened in March, after $3m was spent on its creation. It's on St George street right in the centre of St Augustine. Cindy Stavely gave me a whistle stop tour round the living museum, which has a blacksmith, old newspaper printing press, and a gunsmith.",
         content: '<img src="images/gunner.jpg">',
         address: "• <a target='_blank' href='http://colonialquarter.com/'>colonialquarter.com</a>"
     },
@@ -114,7 +116,7 @@ var boxs = [
     {
         selector: '#cover6',
         headline: 'Spongeorama',
-        copy: "<a target='_blank' href='https://twitter.com/ariellec'>@ariellec</a> suggested a trip to Tarpon Springs to take in the sponge-diving museum. Spongeorama is a sponge-diving museum (free entry) on Dodecanese Boulevard, which is worth visiting for the circa 1960s sponge film they show alone. The film introduces man's quest for sponge in quite grandiose fashion. 'The treasure sought is a gift of the sea, taken for granted by most,' a deep voice says as we watch grainy pictures of weather beaten sailors heading out to the ocean. 'Since before the time of Christ, since before the time of Moses, since before the beginning of recorded history, man has sought and prized the natural sponge.'",
+        copy: "<a target='_blank' href='https://twitter.com/ariellec'>@ariellec</a> suggested a trip to Tarpon Springs to take in the sponge-diving museum. Spongeorama is a sponge-diving museum (free entry) on Dodecanese Boulevard, which is worth visiting for the circa 1960s sponge film they show alone. The film introduces man's quest for sponge in quite grandiose fashion. 'The treasure sought is a gift of the sea, taken for granted by most,' a deep voice says as we watch grainy pictures of weather-beaten sailors heading out to the ocean. 'Since before the time of Christ, since before the time of Moses, since before the beginning of recorded history, man has sought and prized the natural sponge.'",
         content: '<img src="images/tarpon1.jpg">',
         address: "• <a target='_blank' href='http://www.spongeorama.com/'>spongeorama.com</a>"
     },
@@ -124,13 +126,13 @@ var boxs = [
         headline: 'Biff Burger',
         copy: 'Biff Burger was <a target="_blank" href="http://www.guardian.co.uk/travel/2013/apr/29/florida-road-trip-day-one#comment-23164388">recommended by julianem</a> in the comments. It’s a St Petersburg institution and one of the last relics of a failed franchise bid by the Biff owners in the 1960s.<br/>Back then, buoyed by the success of this small drive-in diner, the owners expanded across Florida and the rest of south-east US. They sold the rights to 800 Biff burgers at $13,000 each, which included built-in friers and rest rooms. Now only two Biff burgers remain, and only one of those retains the once-sort-of-famous Biff name: this one.',
         content: '<img src="images/biff1.jpg">',
-        address: '• <a target="_blank" href="http://biffburgers.com/">biffburgers.com</a>'
+        address: '• <a target="_blank" href="http://biffburgers.com/">biffburgers.com</a>, 3939 49th Street N. Saint Petersburg'
     },
 
     {
         selector: '#cover8',
         headline: 'Fred Howard Park',
-        copy: 'Fred Howard Park is a sandbar that shoots out from the coast of Tarpon Springs. You can drive right out into the Gulf of Mexico along a narrow, sloping blacktop road which plunges down into the water on either side.  At its tip, the sandbar fans out like the letter T, with a beautiful white sandy beach  acing out to the west and palm trees galore. Some people have choose to ignore the beach and sunbathe on the side of the road beside their cars.',
+        copy: 'Fred Howard Park is a sandbar that shoots out from the coast of Tarpon Springs. You can drive right out into the Gulf of Mexico along a narrow, sloping blacktop road which plunges down into the water on either side.  At its tip, the sandbar fans out like the letter T, with a beautiful white sandy beach  acing out to the west and palm trees galore. Some people choose to ignore the beach and sunbathe on the side of the road beside their cars.',
         content: '<img src="images/fred2.jpg">',
         address: '• <a target="_blank" href="http://www.pinellascounty.org/park/06_howard.htm">pinellascounty.org</a>'
     },
@@ -138,9 +140,9 @@ var boxs = [
     {
         selector: '#cover9',
         headline: "Sharkey's",
-        copy: '<a target="_blank" href="http://www.guardian.co.uk/discussion/user/id/11335116">Marcia Douglas</a> recommended Sharkey’s, a bar and restaurant on the beach just south of Venice. It has it’s own pier and is a popular fishing spot. I had a “cajun blackened” grouper sandwich then a swim – despite the shark teeth on the beach and the men fishing for sharks from the end of the pier.',
+        copy: '<a target="_blank" href="http://www.guardian.co.uk/discussion/user/id/11335116">Marcia Douglas</a> recommended Sharkey’s, a bar and restaurant on the beach just south of Venice. It has its own pier and is a popular fishing spot. I had a “cajun blackened” grouper sandwich then a swim – despite the shark teeth on the beach and the men fishing for sharks from the end of the pier.',
         content: '<img src="images/sherry1.jpg">',
-        address: '• <a target="_blank" href="http://www.sharkysonthepier.com/">sharkysonthepier.com</a>'
+        address: '• <a target="_blank" href="http://www.sharkysonthepier.com/">sharkysonthepier.com</a>, 1600 Harbor Drive South, Venice'
     },
 
     {
@@ -148,7 +150,7 @@ var boxs = [
         headline: 'Wynwood',
         copy: 'Wynwood came<a target="_blank" href="http://discussion.guardian.co.uk/comment-permalink/23210268"> recommended by Richard Cole</a> in the blog comments. The neighbourhood is noted for its graffiti and trendy bars and restaurants. I headed straight to Wynwood Walls, a little park-cum-outdoor eating space with beautiful street art all along the warehouse type buildings that surround it. Wood Tavern was a personal favourite, a hip bar with a big outdoor drinking area and a 1960s Mercury Commuter estate (think chrome and space-age styling), converted into a taco truck. The tacos, served by a friendly woman called Sury, were $1 and delicious.',
         content: '<img src="images/wynwood.jpg">',
-        address: '• <a target="_blank" href="http://woodtavernmiami.com/">woodtavernmiami.com</a>'
+        address: '• <a target="_blank" href="http://woodtavernmiami.com/">woodtavernmiami.com</a>, 2531 N.W. 2nd Avenue'
 
     },
 
@@ -157,13 +159,13 @@ var boxs = [
         headline: 'Calle Ocho',
         copy: "In Miami went straight to<a target='_blank' href='http://www.guardian.co.uk/travel/2008/feb/09/miami.travelfoodanddrink'> Little Havana</a>, as per<a target='_blank' href='http://www.twitter.com/angustcat'> @AngusTCat</a>,<a target='_blank' href='http://www.twitter.com/discoverusauk'> @discoverusaUK</a> and<a target='_blank' href='http://www.twitter.com/ariellec'> @ariellec</a>'s instruction - Cuban cafes, restaurants and cigar shops packed into this little neighbourhood, with old men playing dominoes in Maximo Gomez Park on the corner. I know nothing about cigars but was waved into the Cuban Cigar Corporation by a woman called Dunia. She showed me how she was keeping some of the cigars moist, in a wooden casket with a glass of brandy and two glasses of water inside. She then flogged me three cigars for the price of two and insisted I smoke one there and then.",
         content: '<img src="images/cigar3.jpg">',
-        address: '• <a target="_blank" href="http://www.cubatobaccocigarco.com/">cubatobaccocigarco.com</a>'
+        address: '• <a target="_blank" href="http://www.cubatobaccocigarco.com/">cubatobaccocigarco.com</a>, 1528 SW 8th Street'
     },
 
     {
         selector: '#cover12',
         headline: 'Peace, Love & Little Donuts',
-        copy: '<a target="_blank" href="https://twitter.com/ParadiseCoast/statuses/329539274347266048">@paradisecoast</a> suggested Peace, Love & Little Donuts for breakfast. I obliged. It’s a drive-thru doughnut place at the start of the <a target="_blank" href="http://en.wikipedia.org/wiki/Tamiami_Trail">Tamiami Trail</a> – the road that runs across the Everglades to Miami. Keen to get in the spirit, I plumped for a bacon and maples doughnut as well as more conventional chocolate ones. It wasn’t too bad. But I’m not sure I’d have it again.',
+        copy: '<a target="_blank" href="https://twitter.com/ParadiseCoast/statuses/329539274347266048">@paradisecoast</a> suggested Peace, Love & Little Donuts for breakfast. I obliged. It’s a drive-thru doughnut place at the start of the <a target="_blank" href="http://en.wikipedia.org/wiki/Tamiami_Trail">Tamiami Trail</a> – the road that runs across the Everglades to Miami. Keen to get in the spirit, I plumped for a bacon and maple syrup donut as well as more conventional chocolate ones. It wasn’t too bad. But I’m not sure I’d have it again.',
         content: '<img src="images/donut2.jpg">',
         address: '• <a target="_blank" href="https://www.facebook.com/Peaceloveandlittledonutsofnaples">Facebook page</a>'
     },
@@ -187,7 +189,7 @@ var boxs = [
     {
         selector: '#cover15',
         headline: 'No Name Pub',
-        copy: 'No Name Pub came recommended by <a target="_blank" href="https://twitter.com/TooMuchMe/statuses/329969367238467584">@toomuchme</a>. It’s a roaring locals joint about 3 miles off US 1 on Big Pine Key - one of the number of islands that makes up the road down to Key West. You immediately notice the thousands and thousands of dollar bills lining the walls and ceiling - between $65,000 to $75,000 hangs in the bar. The bills have all been left by customers, with personalised messages, so I left one from the Guardian, stapled into the ceiling with a staple gun provided staff.',
+        copy: 'No Name Pub came recommended by <a target="_blank" href="https://twitter.com/TooMuchMe/statuses/329969367238467584">@toomuchme</a>. It’s a roaring locals joint about 3 miles off US 1 on Big Pine Key - one of the number of islands that makes up the road down to Key West. You immediately notice the thousands and thousands of dollar bills lining the walls and ceiling - between $65,000 to $75,000 hangs in the bar. The bills have all been left by customers, with personalised messages, so I left one from the Guardian ... with a staple gun provided staff.',
         content: '<img src="images/noname.jpg">',
         address: "• <a target='_blank' href='http://www.nonamepub.com/'>nonamepub.com</a>"
     },
@@ -211,9 +213,9 @@ var boxs = [
     {
         selector: '#cover17',
         headline: 'News Cafe',
-        copy: '<a target="_blank" href="https://twitter.com/hangingwithmr">@hangingwithmr</a> suggested this place. Trivia: Giovanni Versace bought magazines from News Cafe on 15 July 1997. He then walked the short distance home, where he was shot dead on his doorstep by<a target="_blank" href="http://abcnews.go.com/Archives/video/july-15-1997-suspect-versace-murder-10363773"> Andrew Cunanan</a>. The service was a little slow. And not very friendly. But the decor inside was quite nice, with red leather booths and black and white photos on the walls, while outside is a good spot for people watching.',
+        copy: '<a target="_blank" href="https://twitter.com/hangingwithmr">@hangingwithmr</a> suggested this place. Trivia: Gianni Versace bought magazines from News Cafe on 15 July 1997. He then walked the short distance home, where he was shot dead on his doorstep by<a target="_blank" href="http://abcnews.go.com/Archives/video/july-15-1997-suspect-versace-murder-10363773"> Andrew Cunanan</a>. The service was a little slow. And not very friendly. But the decor inside was quite nice, with red leather booths and black and white photos on the walls, while outside is a good spot for people watching.',
         content: '<img src="images/news.jpg">',
-        address: "• <a target='_blank' href='http://www.newscafe.com/welcome.html'>newscafe.com</a>"
+        address: "• <a target='_blank' href='http://www.newscafe.com/welcome.html'>newscafe.com</a>, 800 Ocean Drive, Miami Beach"
     },
 
     {
@@ -226,26 +228,26 @@ var boxs = [
 
     {
         selector: '#cover20',
-        headline: 'Hemmingway Home',
-        copy: "Hemingway lived here for 10 years in the 1930s, and the home is now kitted out with posters, books and, best of all, six-toed cats - bringers of good luck, according to the tour guide. The house and grounds of this restored home/museum are beautiful - it was built in 1851 and has big high ceilings and yellow shutters over the windows. It's a big white-washed two-storey place, with a wrought iron balcony running round the house.",
+        headline: 'Hemingway Home',
+        copy: "Hemingway lived here for 10 years in the 1930s, and the home is now kitted out with posters, books and, best of all, six-toed cats - bringers of good luck, according to the tour guide. The house and grounds of this restored home/museum are beautiful - it was built in 1851 and has big high ceilings and yellow shutters over the windows. It's a big white-washed two-storey place, with a wrought-iron balcony running round the house.",
         content: '<img src="images/hemmingway.jpg">',
-        address: "• <a target='_blank' href='http://www.hemingwayhome.com/'>hemingwayhome.com</a>"
+        address: "• <a target='_blank' href='http://www.hemingwayhome.com/'>hemingwayhome.com</a>, 907 Whitehead Street, Key West"
     },
 
     {
         selector: '#cover21',
         headline: 'Southernmost House',
-        copy: 'The southernmost hotel in mainland in America. At $192 for the room, plus tax it was more expensive than I averaged on the trip, but one of the cheaper options available in Key West, at least that night, so worth booking in advance. Five US presidents have stayed here, the last being Jimmy Carter. The hotel has been here since 1896, but had a revamp in the 90s and is very pleasant indeed – marble-heavy bathrooms and four-poster beds.',
+        copy: 'The southernmost hotel in mainland America. At $192 for the room, plus tax it was more expensive than I averaged on the trip, but one of the cheaper options available in Key West, at least that night, so worth booking in advance. Five US presidents have stayed here, the last being Jimmy Carter. The hotel has been here since 1896, but had a revamp in the 90s and is very pleasant indeed – marble-heavy bathrooms and four-poster beds.',
         content: '<img src="images/hotel.jpg">',
-        address: "• <a target='_blank' href='http://www.southernmosthouse.com/'>southernmosthouse.com</a>"
+        address: "• <a target='_blank' href='http://www.southernmosthouse.com/'>southernmosthouse.com</a>, 1400 Duval Street, Key West"
     },
 
     {
         selector: '#cover22',
         headline: 'Blue Haven',
-        copy: "<a target='_blank' href='https://twitter.com/vanessavideocam/status/330060529504759810'>@vanessavideocam</a> recommended Blue Heaven,  as did <a target='_blank' href='http://discussion.guardian.co.uk/comment-permalink/23148741'>Cautious Optimist</a> through Guardian Witness. It's an open air bar-cum-restaurant and was packed on Friday morning - a 45-minute wait for a table. If you can afford to wait though, it’s well worth it. Even at 10.30am a band was playing and people were getting jolly at the bar, despite a heavy shower. Key West is a drinking place. Big bottles of Grolsch and bloody maries were the drinks of choice here.",
+        copy: "<a target='_blank' href='https://twitter.com/vanessavideocam/status/330060529504759810'>@vanessavideocam</a> recommended Blue Heaven,  as did <a target='_blank' href='http://discussion.guardian.co.uk/comment-permalink/23148741'>Cautious Optimist</a> through Guardian Witness. It's an open air bar-cum-restaurant and was packed on Friday morning - a 45-minute wait for a table. If you can afford to wait though, it’s well worth it. Even at 10.30am a band was playing and people were getting jolly at the bar, despite a heavy shower. Key West is a drinking place. Big bottles of Grolsch and bloody marys were the drinks of choice here.",
         content: '<img src="images/bluehaven.jpg">',
-        address: "• <a target='_blank' href='http://www.blueheavenkw.com/'>blueheavenkw.com</a>"
+        address: "• <a target='_blank' href='http://www.blueheavenkw.com/'>blueheavenkw.com</a>, 729 Thomas St. Key West"
     }
 
 
@@ -255,7 +257,7 @@ var boxs = [
 
     $("#buttons").fadeOut();
     $(".dayofweek").fadeOut();
-    $("#tooltip").fadeOut();
+    $("#tooltip1").fadeOut();
     $("#lightbox").fadeIn(function(event){      
       $("#content").html(box.content);
       $("#copyheader").html(box.headline)

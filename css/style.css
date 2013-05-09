@@ -258,7 +258,7 @@ body {
 }
 
 
-#tooltip {
+.tooltip {
 
 	padding: 5px;
 	position: absolute;
@@ -272,6 +272,15 @@ body {
 	font-size: 20px;
 	display: none;
 	z-index: 10
+}
+
+#tooltip2 {
+
+	width: 200px;
+	top: 444px;
+	left: 700px;
+	display: block
+
 }
 
 
